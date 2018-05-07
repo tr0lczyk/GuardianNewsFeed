@@ -88,14 +88,20 @@ public class Networking {
 
         try {
             JSONObject baseJsonResponse = new JSONObject(newsJson);
-            JSONArray marketRecordArray = baseJsonResponse.getJSONArray("markets");
-            for (int i = 0; i < baseJsonResponse.length(); i++) {
-                JSONObject currentMarketRecord = marketRecordArray.getJSONObject(i);
-                String instrumentName = currentMarketRecord.getString("instrumentName");
-                String instrumentBid = currentMarketRecord.getString("displayBid");
-                String instrumentOffer = currentMarketRecord.getString("displayOffer");
-                News newMarketRecord = new News(instrumentName, instrumentBid, instrumentOffer);
-                newses.add(newMarketRecord);
+            JSONObject newsObject = baseJsonResponse.getJSONObject("response");
+            JSONArray newsArray = newsObject.getJSONArray("results");
+            for (int i = 0; i < newsArray.length(); i++) {
+                JSONObject currentNews = newsArray.getJSONObject(i);
+                String newsTitle = currentNews.getString("webTitle");
+                String newsSection = currentNews.getString("sectionName");
+                String newsDate = currentNews.getString("webPublicationDate");
+                String newsLink = currentNews.getString("webUrl");
+
+                JSONObject newsFields = currentNews.getJSONObject("fields");
+                String newsAuthor = newsFields.getString("byline");
+
+                News newsUpdate = new News(newsTitle,newsAuthor, newsSection, newsDate, newsLink);
+                newses.add(newsUpdate);
             }
         } catch (JSONException e) {
             Log.e("QueryUtils", "Error parsing JSON", e);

@@ -10,11 +10,14 @@ public class News {
 
     private String newsDate;
 
-    public News(String newsTitle, String newsAuthor, String newsCategory, String newsDate){
+    private String newsLink;
+
+    public News(String newsTitle, String newsAuthor, String newsCategory, String newsDate, String newsLink){
         this.newsTitle = newsTitle;
         this.newsAuthor = newsAuthor;
         this.newsCategory = newsCategory;
         this.newsDate = newsDate;
+        this.newsLink = newsLink;
     }
 
     public String getNewsTitle() {
@@ -31,5 +34,9 @@ public class News {
 
     public String getNewsDate() {
         return newsDate;
+    }
+
+    public String getNewsLink() {
+        return newsLink;
     }
 }
