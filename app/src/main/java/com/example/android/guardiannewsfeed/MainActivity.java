@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
     public static final String LOG = MainActivity.class.getName();
 
     private NewsAdapter newsAdapter;
+
+    private TextView noInfoText;
 
     public static final String URL_LINK = "http://content.guardianapis.com/search?q=android&show-fields=byline&api-key=57228fac-f4ff-4f95-8096-0acf0f9ca0db";
 
@@ -56,6 +59,8 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
                 startActivity(intent);
             }
         });
+        noInfoText = findViewById(R.id.no_info);
+        newsListView.setEmptyView(noInfoText);
     }
 
     @Override
@@ -68,6 +73,7 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
     public void onLoadFinished(Loader<List<News>> loader, List<News> newses) {
         View progressBar = findViewById(R.id.progress);
         progressBar.setVisibility(View.GONE);
+        noInfoText.setText(R.string.no_info);
         newsAdapter.clear();
         if(newses != null && !newses.isEmpty()){
             Log.e(LOG, "Loader load finished");

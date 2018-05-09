@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">GuardianNewsFeed</string>
     <string name="by">by\ </string>
+    <string name="todo">TODO</string>
+    <string name="guardian_news_feed">Guardian News Feed</string>
+    <string name="no_info">No info available, restart the app</string>
 </resources>

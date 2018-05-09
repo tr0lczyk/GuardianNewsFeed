@@ -21,7 +21,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:gravity="center"
-            android:text="Guardian News Feed"
+            android:text="@string/guardian_news_feed"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textColor="#F6F6F6"
             android:textSize="18sp"
@@ -43,7 +43,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/guardianlogo" />
+            app:srcCompat="@drawable/guardianlogo"
+            android:contentDescription="@string/todo" />
 
     </android.support.constraint.ConstraintLayout>
 
@@ -64,4 +65,15 @@
         app:layout_constraintEnd_toEndOf="@+id/dynamicList"
         app:layout_constraintStart_toStartOf="@+id/dynamicList"
         app:layout_constraintTop_toTopOf="@+id/dynamicList" />
+
+    <TextView
+        android:id="@+id/no_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        app:layout_constraintBottom_toBottomOf="@+id/dynamicList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/dynamicList"
+        tools:text="@string/no_info" />
 </android.support.constraint.ConstraintLayout>
