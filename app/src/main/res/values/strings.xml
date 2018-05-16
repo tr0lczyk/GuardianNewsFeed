@@ -4,4 +4,9 @@
     <string name="todo">TODO</string>
     <string name="guardian_news_feed">Guardian News Feed</string>
     <string name="no_info">No info available, restart the app</string>
+    <string name="settings_menu_item">Settings</string>
+    <string name="menu_title">Guardian Settings</string>
+    <string name="news_limit_setting">News limit</string>
+    <string name="news_limit_key" translatable="false">page_size</string>
+    <string name="news_limit_default" translatable="false">10</string>
 </resources>
