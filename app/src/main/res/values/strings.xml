@@ -9,4 +9,21 @@
     <string name="news_limit_setting">News limit</string>
     <string name="news_limit_key" translatable="false">page_size</string>
     <string name="news_limit_default" translatable="false">10</string>
+
+    <string name="section_label" translatable="false">Section</string>
+    <string name="section_key" translatable="false">section</string>
+    <string name="section_default" translatable="false">@string/section_all_value</string>
+
+    <string name="section_media_label">Media</string>
+    <string name="section_media_value" translatable="false">media</string>
+
+    <string name="section_technology_label">Tech</string>
+    <string name="section_technology_value" translatable="false">technology</string>
+
+    <string name="section_tv_label">Television and radio</string>
+    <string name="section_tv_value" translatable="false">tv-and-radio</string>
+
+    <string name="section_all_label">All</string>
+    <string name="section_all_value" translatable="false">all</string>
+
 </resources>

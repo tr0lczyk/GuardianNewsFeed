@@ -20,7 +20,6 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,16 +69,24 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
 
     @Override
     public Loader<List<News>> onCreateLoader(int id, Bundle args) {
-        /*Log.e(LOG, "Loader created");
-        return new NewsLoader(this, URL_LINK);*/
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
-        String newsLimit = sharedPreferences.getString(getString(R.string.news_limit_key), getString(R.string.news_limit_default));
+        String newsLimitPref = sharedPreferences.getString(
+                getString(R.string.news_limit_key), getString(R.string.news_limit_default));
+
+        String sectionPref = sharedPreferences.getString(
+                getString(R.string.section_key),getString(R.string.section_default));
 
         Uri baseUri = Uri.parse(URL_LINK);
         Uri.Builder builderUri = baseUri.buildUpon();
 
-        builderUri.appendQueryParameter("page-size",newsLimit);
+        if(sectionPref.equals("all")){
+            builderUri.appendQueryParameter("page-size",newsLimitPref);
+        } else {
+            builderUri.appendQueryParameter("page-size",newsLimitPref);
+            builderUri.appendQueryParameter("section",sectionPref);
+        }
+        Log.e(LOG, builderUri.toString());
         return new NewsLoader(MainActivity.this, builderUri.toString());
     }
 

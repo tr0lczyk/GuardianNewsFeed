@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="section_label">
+        <item>@string/section_all_label</item>
+        <item>@string/section_media_label</item>
+        <item>@string/section_technology_label</item>
+        <item>@string/section_tv_label</item>
+    </string-array>
+
+    <string-array name="section_value">
+        <item>@string/section_all_value</item>
+        <item>@string/section_media_value</item>
+        <item>@string/section_technology_value</item>
+        <item>@string/section_tv_value</item>
+    </string-array>
+</resources>

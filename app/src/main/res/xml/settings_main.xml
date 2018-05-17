@@ -2,6 +2,13 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/menu_title">
 
+    <ListPreference
+        android:defaultValue="@string/section_default"
+        android:entries="@array/section_label"
+        android:entryValues="@array/section_value"
+        android:key="@string/section_key"
+        android:title="@string/section_label"/>
+
     <EditTextPreference
         android:defaultValue="@string/news_limit_default"
         android:inputType="numberDecimal"
