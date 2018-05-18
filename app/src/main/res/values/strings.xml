@@ -17,7 +17,7 @@
     <string name="section_media_label">Media</string>
     <string name="section_media_value" translatable="false">media</string>
 
-    <string name="section_technology_label">Tech</string>
+    <string name="section_technology_label">Technology</string>
     <string name="section_technology_value" translatable="false">technology</string>
 
     <string name="section_tv_label">Television and radio</string>
